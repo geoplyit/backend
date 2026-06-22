@@ -28,6 +28,8 @@ WORKDIR /application
 RUN addgroup -S spring && adduser -S spring -G spring
 USER spring:spring
 
+RUN apk add --no-cache curl
+
 # আধুনিক লেআউট অনুযায়ী সমস্ত এক্সট্রাক্ট করা ফাইল একসাথে কপি করা
 COPY --from=optimizer /extractor/extracted/ ./
 
